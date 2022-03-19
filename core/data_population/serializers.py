@@ -28,9 +28,6 @@ class CustomCompanyField(serializers.RelatedField):
 
 
 class RevenueFilingPopulationSerializer(serializers.ModelSerializer):
-    # company = serializers.CharField(source='company.name')
-    # company = serializers.RelatedField(queryset=Company.objects.all())
-    # company = serializers.ReadOnlyField(source='company.name')
     company = CustomCompanyField(queryset=Company.objects.all())
     
     class Meta:
@@ -38,3 +35,10 @@ class RevenueFilingPopulationSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+
+class EbidtaFilingPopulationSerializer(serializers.ModelSerializer):
+    company = CustomCompanyField(queryset=Company.objects.all())
+    
+    class Meta:
+        model = EbitdaFiling
+        fields = '__all__'

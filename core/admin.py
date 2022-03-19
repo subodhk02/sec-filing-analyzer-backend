@@ -9,3 +9,7 @@ class CompanyAdmin(admin.ModelAdmin):
 @admin.register(RevenueFiling)
 class RevenueFilingAdmin(admin.ModelAdmin):
     search_fields = ['company__name', 'company__cik_number']
+    
+@admin.register(EbitdaFiling)
+class EbitdaFilingAdmin(admin.ModelAdmin):
+    search_fields = ['company__name', 'company__cik_number']

@@ -1,8 +1,8 @@
 from django.core.management.base import BaseCommand
-from core.data_population.serializers import RevenueFilingPopulationSerializer
+from core.data_population.serializers import *
 from core.providers.data_population import DataPopulationProvider
 
-from core.models import Company, RevenueFiling
+from core.models import Company, EbitdaFiling, RevenueFiling
 
 import json
 
@@ -11,6 +11,7 @@ class Command(BaseCommand):
         POPULATION_DATA = [
             (Company, None, 'core/data_population/company.json'),
             (RevenueFiling, RevenueFilingPopulationSerializer, 'core/data_population/revenue.json'),
+            (EbitdaFiling, EbidtaFilingPopulationSerializer, 'core/data_population/ebitda.json'),
         ]
 
         for data in POPULATION_DATA:
