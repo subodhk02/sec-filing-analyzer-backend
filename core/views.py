@@ -11,6 +11,13 @@ class CompanyList(generics.ListAPIView):
     def get_queryset(self):
         return Company.objects.all()
 
+class CompanyDetail(generics.RetrieveAPIView):
+    serializer_class = CompanySerializer
+    lookup_field = 'slug'
+    
+    def get_queryset(self):
+        return Company.objects.all()
+
 class RevenueStats(generics.ListAPIView):
     serializer_class = RevenueFilingSerializer
     queryset = RevenueFiling.objects.all()
