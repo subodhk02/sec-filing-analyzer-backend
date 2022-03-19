@@ -1,18 +1,27 @@
 from django.db import models
 
+from misc.utils import get_unique_slug
+
 class Company(models.Model):
     name = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=100, unique=True)
     cik_number = models.CharField(max_length=100, unique=True)
     
     class Meta:
-        unique_together = ('name', 'cik_number')
+        unique_together = ('slug', 'cik_number')
         indexes = [
             models.Index(fields=['name']),
+            models.Index(fields=['slug']),
             models.Index(fields=['cik_number']),
         ]
     
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = get_unique_slug(self, "name")
+        super(Company, self).save(*args, **kwargs)
 
 class RevenueFiling(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE)

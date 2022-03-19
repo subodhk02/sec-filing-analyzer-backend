@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from misc.models import ErrorLogging
+
+
+admin.site.register(ErrorLogging)

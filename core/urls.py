@@ -6,5 +6,5 @@ from core.views import *
 urlpatterns = [
     path('company/list/', CompanyList.as_view()),
     
-    path('stats/revenue/<str:company_cik>/', RevenueStats.as_view())
+    path('stats/revenue/<str:company_slug>/', RevenueStats.as_view())
 ]
