@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'silk',
 
     
-    'core'
+    'core',
+    'misc',
 ]
 
 MIDDLEWARE = [
@@ -196,7 +197,7 @@ REST_FRAMEWORK = {
     },
     
     # Exception Handling
-    'EXCEPTION_HANDLER': 'motorwash.exception_handler.autoave_exception_handler',
+    'EXCEPTION_HANDLER': 'sec-filing-analyzer.exception_handler.autoave_exception_handler',
 }
 
 if DEBUG:
@@ -210,26 +211,7 @@ SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('JWT','Bearer'),
 }
 
-CORS_ALLOWED_ORIGIN_REGEXES = [
-    "http://localhost:3000",
-    "http://localhost:4000",
-    "http://127.0.0.1:3000",
-    "http://127.0.0.1:4000",
-
-    "https://moterwash.netlify.app",
-    "https://motorwash-salesman.netlify.app",
-    "https://owner-motorwash.netlify.app",
-
-    # "https://autoave.care",
-    # "https://sales.autoave.care",
-    # "https://owner.autoave.care",
-
-    "https://autoave.in",
-    "https://www.autoave.in",
-    "https://sales.autoave.in",
-    "https://owner.autoave.in",
-
-]
+CORS_ALLOW_ALL_ORIGINS = True
 
 # # Django Storages
 # AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
