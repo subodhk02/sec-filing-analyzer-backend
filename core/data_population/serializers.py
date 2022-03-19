@@ -36,7 +36,7 @@ class RevenueFilingPopulationSerializer(serializers.ModelSerializer):
 
 
 
-class EbidtaFilingPopulationSerializer(serializers.ModelSerializer):
+class EbitdaFilingPopulationSerializer(serializers.ModelSerializer):
     company = CustomCompanyField(queryset=Company.objects.all())
     
     class Meta:

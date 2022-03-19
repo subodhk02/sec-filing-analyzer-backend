@@ -11,7 +11,7 @@ class Command(BaseCommand):
         POPULATION_DATA = [
             (Company, None, 'core/data_population/company.json'),
             (RevenueFiling, RevenueFilingPopulationSerializer, 'core/data_population/revenue.json'),
-            (EbitdaFiling, EbidtaFilingPopulationSerializer, 'core/data_population/ebitda.json'),
+            (EbitdaFiling, EbitdaFilingPopulationSerializer, 'core/data_population/ebitda.json'),
         ]
 
         for data in POPULATION_DATA:

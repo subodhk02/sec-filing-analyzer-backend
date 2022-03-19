@@ -1,6 +1,7 @@
+from attr import field
 from rest_framework import serializers
 
-from core.models import Company, RevenueFiling
+from core.models import *
 
 class CompanySerializer(serializers.ModelSerializer):
     class Meta:
@@ -10,4 +11,9 @@ class CompanySerializer(serializers.ModelSerializer):
 class RevenueFilingSerializer(serializers.ModelSerializer):
     class Meta:
         model = RevenueFiling
-        fields = "__all__"
+        exclude = ['company']
+
+class EbitdaFilingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = EbitdaFiling
+        exclude = ['company']
