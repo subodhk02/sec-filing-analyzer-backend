@@ -1,5 +1,5 @@
 """
-WSGI config for edgar project.
+WSGI config for sec-filing-analyzer project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'edgar.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sec-filing-analyzer.settings')
 
 application = get_wsgi_application()
